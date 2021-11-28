@@ -112,7 +112,7 @@
             $.ajax({
                 type: 'post',
                 url: '/posts/create',
-                data: newPostForm.serialize(),
+                data: newPostForm.serialize(),// serialize() covert thr form dat in Json
                 success: function(data){
                     let newPost = newPostDom(data.data.posting);
                     $('#posts-list-container>ul').prepend(newPost);
