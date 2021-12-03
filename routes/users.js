@@ -21,6 +21,13 @@ router.post('/create-session',passport.authenticate(
     {failureRedirect: '/users/sign-in'},
 ), usersController.createSession);
 
+
+
 router.get('/sign-out',usersController.destroySession);
+
+
+
+router.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email'], prompt : "select_account"})); // scope is info that we are looking to fetch
+router.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/users/sign-in'}), usersController.createSession);
 
 module.exports = router;
