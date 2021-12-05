@@ -5,7 +5,7 @@ const path = require('path');
 const { relative } = require('path');
 
 // this part defines how to communication take part 
-// htis part send the mail
+// this part send the mail
 let transporter = nodemailer.createTransport({
 
     service: 'gmail',
@@ -15,14 +15,14 @@ let transporter = nodemailer.createTransport({
     secure:false,
 
     auth: {
-        user : 'urgyanue195125ece@gmail.com',
-        pass : 'urg#50475Y'
+        user : 'Ladakhchat',
+        pass : 'urg#50475Y'  
     }
 
 });
 
 //  it defines the in mailers of views
-let renderTemplate = (data, relativePath) => {
+let renderTemplate = (data, relativePath) => {  // relative path from where mail being send
 
     let mailHTML;
     ejs.renderFile(
