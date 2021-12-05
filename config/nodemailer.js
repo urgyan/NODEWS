@@ -30,7 +30,7 @@ let renderTemplate = (data, relativePath) => {  // relative path from where mail
         data,
         function(err,template){
 
-            if(err){ console.log('error in rendering the template'); return;}
+            if(err){ console.log('error in rendering the template',err); return;}
 
             mailHTML = template;
         }
