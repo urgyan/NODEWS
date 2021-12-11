@@ -18,7 +18,7 @@
                     // call the create comment class
                     new PostComments(data.data.post._id);
 
-                        // enable the functionality of the toggle like button on the new post
+                    // CHANGE :: enable the functionality of the toggle like button on the new post
                     new ToggleLike($(' .toggle-like-button', newPost));
 
                     new Noty({
@@ -40,6 +40,7 @@
 
     // method to create a post in DOM
     let newPostDom = function(post){
+        // CHANGE :: show the count of zero likes on this post
         return $(`<li id="post-${post._id}">
                     <p>
                         
