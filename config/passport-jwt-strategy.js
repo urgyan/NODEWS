@@ -1,13 +1,13 @@
 const passport = require('passport');
 const JWTStrategy = require('passport-jwt').Strategy;
 const ExtractJWT = require('passport-jwt').ExtractJwt;// it extract JWT from Header
-
+const env = require('./environment');
 const User = require('../models/user');
 
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'codeial' // encryption and dcreption string 
+    secretOrKey: env.jwt_secret // encryption and dcreption string 
 }
 
 
