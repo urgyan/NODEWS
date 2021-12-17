@@ -1,0 +1,11 @@
+[0mGET / [32m200[0m 141.834 ms - 5268[0m
+[0mGET /favicon.ico [33m404[0m 4.371 ms - 150[0m
+[0mGET /users/sign-in [36m304[0m 3.508 ms - -[0m
+[0mPOST /users/create-session [36m302[0m 20.650 ms - 46[0m
+[0mGET / [32m200[0m 15.621 ms - 7467[0m
+[0mGET /posts/destroy/61b87d1c7e1f43e60d9a9913 [32m200[0m 15.360 ms - 72[0m
+[0mPOST /comments/create [36m302[0m 20.972 ms - 46[0m
+[0mGET / [32m200[0m 21.475 ms - 6842[0m
+[0mGET /users/profile/61acbc77d25e6bf27c9d1ebd [32m200[0m 42.585 ms - 2115[0m
+[0mGET / [32m200[0m 89.818 ms - 6651[0m
+[0mGET / [36m304[0m 78.291 ms - -[0m
