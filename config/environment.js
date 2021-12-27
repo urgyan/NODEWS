@@ -16,7 +16,7 @@ const accessLogStream =  rfs.createStream('access.log', {
 const development = {
     name: 'development',
     asset_path:  './assets',
-    session_cookie_key: 'blahsomething',
+    session_cookie_key: process.env.codeial_session_cookie_key,
     db: 'codeial_development',
     smtp: {
         service: 'gmail',
@@ -26,14 +26,15 @@ const development = {
         secure:false,
     
         auth: {
-            user : 'Ladakhchat',
-            pass : 'urg#50475Y'  
+            user : process.env.codeial_gmail_username,
+            pass : process.env.codeial_gmail_password 
         }
     },
-    google_client_id: "680221469334-o8v5hu43b8fk7oe8ni1viu5m147qkkk4.apps.googleusercontent.com", // e.g. asdfghjkkadhajsghjk.apps.googleusercontent.com
-    google_client_secret: "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", // e.g. _ASDFA%KFJWIASDFASD#FAD-
+    google_client_id: process.env.codeial_google_client_id, // e.g. asdfghjkkadhajsghjk.apps.googleusercontent.com
+    google_client_secret: process.env.codeial_google_client_secret, // e.g. _ASDFA%KFJWIASDFASD#FAD-
     google_call_back_url: "http://localhost:8001/users/auth/google/callback",
-    jwt_secret: 'codeial',
+    
+    jwt_secret: process.env.codeial_jwt_secret,
     morgan: {
         mode: 'dev',
         options: {stream: accessLogStream}
@@ -70,4 +71,5 @@ const production =  {
 
 
 
-module.exports = eval(process.env.codeial_environment) == undefined ? development : eval(process.env.codeial_environment);
+ module.exports = eval(process.env.codeial_environment) == undefined ? development : eval(process.env.codeial_environment);
+// module.exports = production;
