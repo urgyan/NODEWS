@@ -6,19 +6,17 @@ const env = require('./environment');
 
 // tell passport to use a new strategy for google login
 passport.use(new googleStrategy({
-    clientID: env.google_client_id,
-    clientSecret: env.google_client_secret,
-    callbackURL: env.google_call_back_url,
+        clientID: env.google_client_id,
+        clientSecret: env.google_client_secret,
+        callbackURL: env.google_call_back_url,
     },
 
     function(accessToken, refreshToken, profile, done){
         // find a user
-        console.log('inside google ');
         User.findOne({email: profile.emails[0].value}).exec(function(err, user){
             if (err){console.log('error in google strategy-passport', err); return;}
-            // console.log(accessToken, refreshToken);
-            // console.log(profile);
-            // console.log(user);
+            console.log(accessToken, refreshToken);
+            console.log(profile);
 
             if (user){
                 // if found, set this user as req.user
